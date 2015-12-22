@@ -1,0 +1,74 @@
+vim /etc/host
+vim .tmux.conf
+ls -lh
+vim book_notes_tuxnotes
+vim polyglot.ini
+polyglot
+ps aux | grep polyglot
+ps aux | grep stock
+polyglot --help
+ls -al | grep ddc
+telnet 192.168.1.254
+nmap 192.168.1.1/24
+top
+ipython --pylab inline
+vim a.text
+mv a.text a.tex
+ls -l
+java -jar apktool_2.0.1.jar d com.lego.technic.race.apk
+cd .book_notes
+git status
+git add book_notes_tuxnotes
+git commit -m "adds bachelor pad economics, python for finance"
+git push origin master
+dc
+history | grep apk
+cd android_security
+java -jar apktool_2.0.1.jar d com.outfit7.mytalkingtomfree.apk
+vim scarp.py
+python3 scarp.py
+python3 scarp.py | less
+ipython
+ping 192.168.1.79
+ps aux | grep ddclient
+oakdecode
+man oakdecode
+..
+ocatve
+ps aux | grep scan
+cd reti_c1
+convert
+convert -crop 4300x5900 Scanned\ Document-01.jpg
+convert -crop 4300x5900 "Scanned\ Document-01.jpg"
+convert "Scanned\ Document-01.jpg" -crop 4300x5900 "Scanned\ Document-01.jpg"
+identify Scanned\ Document-01.jpg
+mogrify -crop 5116x7086 Scanned\ Document-01.jpg 
+mogrify -crop 4300x5900 Scanned\ Document-01.jpg 
+convert -crop
+convert Scanned\ Document-02.jpg -crop 4300x5900 out.jpg
+man convert
+ls -1
+for f in *.jpg\
+do\
+echo $f\
+done
+cd
+vim img2pdf.sh
+img2pdf.sh
+locate viewjpeg.ps
+cd /tmp
+telegrambot.py
+python telegrambot.py
+vim telegrambot.py
+ll
+ls
+gedit telegrambot.py
+rm telegrambot.py
+pip install twx.botapi
+pip install twx.botapi --upgrade
+python
+python3
+vim
+sudo -i
+octave
+ssh vaio@192.168.1.79
