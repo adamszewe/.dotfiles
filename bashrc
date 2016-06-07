@@ -100,6 +100,41 @@ export EDITOR="vi"
 
 
 
+export PATH=$PATH:"/mnt/workspace/bin_workspace/"
 
+
+
+export NVPACK_ROOT="/mnt/workspace/nvidia_workspace"
+
+export PATH=$PATH:"/mnt/workspace/nvidia_workspace/android-sdk-linux/tools"
+export ANDROID_HOME="/mnt/workspace/nvidia_workspace/android-sdk-linux"
+
+export PATH=$PATH:"/mnt/workspace/nvidia_workspace/android-sdk-linux/platform-tools"
+
+export PATH=$PATH:"/mnt/workspace/nvidia_workspace/android-sdk-linux/build-tools"
+
+export PATH=$PATH:"/mnt/workspace/nvidia_workspace/android-sdk-linux/extras/android/support"
+
+export PATH=$PATH:"/mnt/workspace/nvidia_workspace/android-ndk-r10e"
+
+export NDK_ROOT="/mnt/workspace/nvidia_workspace/android-ndk-r10e"
+export NDKROOT="/mnt/workspace/nvidia_workspace/android-ndk-r10e"
+export NVPACK_NDK_VERSION="android-ndk-r10e"
+export NDK_STANDALONE_46_ANDROID9_32="/mnt/workspace/nvidia_workspace/android-ndk-r10e/toolchains/arm-linux-androideabi-4.6/gen_standalone/linux-x86_64"
+export NDK_STANDALONE_46_ANDROID9_64="/mnt/workspace/nvidia_workspace/android-ndk-r10e/toolchains/aarch64-linux-android-4.9/gen_standalone/linux-x86_64"
+
+export PATH=$PATH:"/mnt/workspace/nvidia_workspace/apache-ant-1.8.2/bin"
+export ANT_HOME="/mnt/workspace/nvidia_workspace/apache-ant-1.8.2"
+
+export PATH=$PATH:"/mnt/workspace/nvidia_workspace/gradle-2.2.1/bin"
+export GRADLE_HOME="/mnt/workspace/nvidia_workspace/gradle-2.2.1"
+export CUDA_TOOLKIT_ROOT_6_5="/mnt/workspace/nvidia_workspace/cuda-6.5"
+
+export PATH=$PATH:"/mnt/workspace/nvidia_workspace/cuda-7.0/bin"
+export CUDA_TOOLKIT_ROOT="/mnt/workspace/nvidia_workspace/cuda-7.0"
+export CUDA_TOOLKIT_ROOT_7_0="/mnt/workspace/nvidia_workspace/cuda-7.0"
+
+
+export ANDROID_HOME="/home/adam/.development/Android/Sdk"
 
 

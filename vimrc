@@ -224,3 +224,5 @@ map <S-Enter> O<Esc>
 
 
 
+"#function! commentBlock()
+

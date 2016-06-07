@@ -13,7 +13,8 @@ files=(
 
 for dotfile in $files
 do
-    if [ -h "~/.$dotfile" ] 
+    echo "checking: $dotfile";
+    if [ -L "~/.$dotfile" ] 
     then 
         echo "$dotfile already exists"
     else 
