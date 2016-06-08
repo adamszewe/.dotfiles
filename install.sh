@@ -18,7 +18,13 @@ do
     then 
         echo "$dotfile already exists"
     else 
-        ln -s "/home/adam/.dotfiles/$dotfile" "/home/adam/.$dotfile"
+        if [-e  "~/.$dotfile" ]
+        then 
+            # backup the selected file
+            mv "~/.$dotfile" 
+        else 
+            ln -s "/home/adam/.dotfiles/$dotfile" "/home/adam/.$dotfile"
+        fi
     fi
 done
 
