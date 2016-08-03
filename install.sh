@@ -1,29 +1,28 @@
-
+#!/usr/bin/bash
 
 # copy the 
 
-files=(
-    bashrc 
-    conkyrc 
-    gitconfig 
-    tmux.conf 
-    vimrc 
-    zshrc
-)
+whoami
 
-for dotfile in $files
+for dotfile in `ls -1 config`
 do
     echo "checking: $dotfile";
-    if [ -L "~/.$dotfile" ] 
+    if [ -h "~/.$dotfile" ] 
     then 
-        echo "$dotfile already exists"
+        echo "$dotfile already exists - but we update it to be double sure" 
+        rm "~/.$dotfile"
+        ln -s "/home/adam/.dotfiles/config/$dotfile" "/home/adam/.$dotfile"
     else 
-        if [-e  "~/.$dotfile" ]
+        echo "the symbolic link $dotfile does not exist\n"
+        if [ -e  "~/.$dotfile" ]
         then 
             # backup the selected file
-            mv "~/.$dotfile" 
+            mv "~/.$dotfile" "/tmp/$dotfile" 
         else 
-            ln -s "/home/adam/.dotfiles/$dotfile" "/home/adam/.$dotfile"
+            echo
+            echo "removing ~/.$dotfile"
+            rm "/home/adam/.$dotfile"
+            ln -s "/home/adam/.dotfiles/config/$dotfile" "/home/adam/.$dotfile"
         fi
     fi
 done

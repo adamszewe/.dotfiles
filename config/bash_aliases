@@ -13,3 +13,6 @@ alias c.='cd ..'
 
 # matlab
 alias matlab='~/.matlab/bin/matlab -nojvm -nosplash'
+
+# gnu octave
+alias octave='octave --no-gui'
