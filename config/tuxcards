@@ -1,12 +1,12 @@
 [General]
 Version=TuxCards_Version 2.2.1 - Qt4
-Data_File=/home/adam/.book_notes/book_notes_tuxnotes
+Data_File=/home/adam/Dropbox/TuxCards/tuxcards
 Autosave=1
 Save_All_Minutes=1
 Save_when_Leaving=1
 Create_Backupfile=1
 Execution_Statement=
-Recent_Files=/home/adam/.book_notes/book_notes_tuxnotes
+Recent_Files="/home/adam/Dropbox/TuxCards/tuxcards,/home/adam/.book_notes/book_notes_tuxnotes"
 Encryption_Used=0
 AutoEncrypt_Entry=0
 Color_Top_R=0
@@ -28,18 +28,18 @@ Enable_CactusBar=1
 Flower_Dir=/usr/local/doc/tuxcards/flowers/
 Icon_Dir=
 Font_Family=FreeMono
-Font_Size=10
+Font_Size=16
 Font_Bold=false
 Font_Italic=false
 Font_Underline=false
 Font_Strikeout=false
-Tree_Font_Family=Noto Sans [unknown]
+Tree_Font_Family=FreeMono
 Tree_Font_Size=16
 Tree_Font_Bold=false
 Tree_Font_Italic=false
 Tree_Font_Underline=false
 Tree_Font_Strikeout=false
-TabSize=2
+TabSize=4
 WordWrap=0
 Linebreak_WithCtrlShift=1
 Show_Main_Toolbar=0
@@ -48,12 +48,12 @@ Show_Editor_Toolbar=0
 Show_RecentFiles_Toolbar=0
 
 [WindowGeometry]
-WindowWidth=1364
-WindowHeight=741
-TreeWidth=182
-EditorWidth=1123
+WindowWidth=959
+WindowHeight=1054
+TreeWidth=126
+EditorWidth=774
 Tree_VScrollBar=0
-WindowXPos=1911
+WindowXPos=951
 WindowYPos=-8
 
 [Donation]
