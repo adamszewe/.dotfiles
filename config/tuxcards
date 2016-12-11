@@ -39,7 +39,7 @@ Tree_Font_Bold=false
 Tree_Font_Italic=false
 Tree_Font_Underline=false
 Tree_Font_Strikeout=false
-TabSize=4
+TabSize=1
 WordWrap=0
 Linebreak_WithCtrlShift=1
 Show_Main_Toolbar=0
@@ -48,12 +48,12 @@ Show_Editor_Toolbar=0
 Show_RecentFiles_Toolbar=0
 
 [WindowGeometry]
-WindowWidth=959
+WindowWidth=1918
 WindowHeight=1054
-TreeWidth=126
-EditorWidth=774
+TreeWidth=468
+EditorWidth=1391
 Tree_VScrollBar=0
-WindowXPos=951
+WindowXPos=-9
 WindowYPos=-8
 
 [Donation]

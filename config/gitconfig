@@ -1,2 +1,5 @@
 [user]
 	email = adam.szewe@gmail.com
+	name = Adam Szewera
+[core]
+	editor = vim
