@@ -1,0 +1,41 @@
+# bash aliases
+
+
+# bash commands - directory navigation
+alias l='ls -CF'
+alias ll='ls -l'
+alias la='ls -la'
+alias lla='ls -l -a'
+alias lls='ls -l -s'
+alias c.='cd ..'
+
+alias lsd='ls -l | grep "^d"'
+alias g='grunt'
+alias h='history'
+alias c='clear'
+alias wtp='lsof -i'
+
+
+#[git]
+alias gpm='git pull origin master'
+alias github="firefox \`git remote -v | grep github.com | grep fetch | head -1 | field 2 | sed's/git:/http:/g'\`"
+alias gdifff='git diff --patience'
+alias glog='git log --format="%Cgreen%h%Creset %C(cyan)%an%Creset - %s" --graph'
+alias gs='git status'
+alias ga='git add -A'
+alias gb='git branch'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gd='git diff'
+
+
+
+alias v='vim'
+
+
+
+# matlab
+alias matlab='~/.matlab/bin/matlab -nojvm -nosplash'
+
+# gnu octave
+alias octave='octave --no-gui'
