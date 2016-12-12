@@ -2,3 +2,6 @@
 	email = adam.szewe@gmail.com
 [color]
 	ui = auto
+	name = Adam Szewera
+[core]
+	editor = vim

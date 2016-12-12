@@ -109,6 +109,8 @@ export PATH=$PATH:"/home/adam/.matlab/bin/"
 export PATH=$PATH:"/home/adam/Development/tools/android-sdk/platform-tools/"
 
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+export PATH=$PATH:"/home/adam/Sync/bin/"
+export PATH=$PATH:"/mnt/tools/android-sdk-linux/platform-tools/"
 
 
 
@@ -116,3 +118,4 @@ export NVM_DIR="/home/adam/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export ANDROID_HOME="/home/adam/Development/tools/android-sdk"
+export ANDROID_HOME="/mnt/tools/android-sdk-linux"
