@@ -1,2 +1,4 @@
 [user]
 	email = adam.szewe@gmail.com
+[color]
+	ui = auto

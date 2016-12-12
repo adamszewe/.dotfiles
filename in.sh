@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+WORKING_DIRECTORY=`pwd`
+
+echo $WORKING_DIRECTORY
