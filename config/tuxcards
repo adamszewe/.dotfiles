@@ -1,12 +1,9 @@
 [General]
-Version=TuxCards_Version 2.2.1 - Qt4
-Data_File=/home/adam/Dropbox/TuxCards/tuxcards
 Autosave=1
 Save_All_Minutes=1
 Save_when_Leaving=1
 Create_Backupfile=1
 Execution_Statement=
-Recent_Files="/home/adam/Dropbox/TuxCards/tuxcards,/home/adam/.book_notes/book_notes_tuxnotes"
 Encryption_Used=0
 AutoEncrypt_Entry=0
 Color_Top_R=0
@@ -25,7 +22,6 @@ Enable_V_Text=0
 Vertical_Text=
 Align_Vertical_Text=0
 Enable_CactusBar=1
-Flower_Dir=/usr/local/doc/tuxcards/flowers/
 Icon_Dir=
 Font_Family=FreeMono
 Font_Size=16

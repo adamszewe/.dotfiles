@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 # the working directory is used to link the files
+set -x
 WORKING_DIRECTORY=`pwd`
 
 
@@ -9,20 +10,17 @@ do
     # check whether this file is a link
     echo "checking: $dotfile";
     if [ -h "~/.$dotfile" ] 
-
-    then 
+    then
         rm "~/.$dotfile"
         ln -s "$WORKING_DIRECTORY/config/$dotfile" "~/.$dotfile"
         echo "Updated the existing link: $dotfile"
-
-    else 
+    else
+        echo "--- debug message ---"
         if [ -e  "~/.$dotfile" ]
-        then 
-            # backup the selected file
-            mv "~/.$dotfile" "/tmp/$dotfile" 
-        else 
-            ln -s "$WORKING_DIRECTORY/config/$dotfile" "~/.$dotfile"
+        then
+            mv "~/.$dotfile" "/tmp/$dotfile"
         fi
+        ln -ns "$WORKING_DIRECTORY/config/$dotfile" "/home/adam/.$dotfile"
     fi
 done
-
+set +x

@@ -8,6 +8,7 @@ alias la='ls -la'
 alias lla='ls -l -a'
 alias lls='ls -l -s'
 alias c.='cd ..'
+alias c='cd'
 
 alias lsd='ls -l | grep "^d"'
 alias g='grunt'
@@ -28,8 +29,7 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gd='git diff'
 
-
-
+#[vim]
 alias v='vim'
 
 
