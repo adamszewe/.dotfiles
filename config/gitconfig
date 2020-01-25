@@ -1,7 +1,8 @@
 [user]
 	email = adam.szewe@gmail.com
+	name = Adam Szewera
 [color]
 	ui = auto
-	name = Adam Szewera
 [core]
 	editor = vim
+	pager = less -F -X

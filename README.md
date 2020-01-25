@@ -1,8 +1,7 @@
 # .dotfiles
 
 ## Description:
-This is a collection of the configuration files for the various tools and programs I use.
+Some configuration files for mostly CLI programs I use on a daily basis.
 
-## Installation:
-1. rename "dotfiles" to ".dotfiles"
-2. run the install.sh   (warning, no backup is created of the old files)
+
+
