@@ -1,22 +1,17 @@
-" TODO: CONFIGURE THIS PROPERLY
-
-
+# Updated to capabilities of IdeaVim 0.55
 set gdefault
 set ignorecase 
 
-" screen navigation
-    set scrolloff=15
+" center the cursor vertically
+    set scrolloff=512
 
 " enable line numbering
     set number
 
 et ai et sw=4 ts=4 tw=120 sts=4
 
-" search 
-    set in
-
 " Turn on the rule in the status line
     set ruler
 
-" Make searches look-ahead as you type
+" make searches look-ahead as you type, incremental search
     set incsearch

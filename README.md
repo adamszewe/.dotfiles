@@ -13,6 +13,8 @@ Some configuration files for mostly CLI programs I use on a daily basis.
 * Git
 * Kubernetes
 * Terraform
-* 
+
+
+## Install
 
 
