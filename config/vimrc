@@ -1,243 +1,57 @@
-"============================================================================
-" .vimrc - the vim configuration file
-"============================================================================
-
-
-
-
-
-"============================================================================
-" All the options will use the Vim way - reset to vim-defaults
-"============================================================================    
-    if &compatible          " only if not set before:
-        set nocompatible    " use vim-defaults instead of vi-defaults (easier, more user friendly)
-    endif
-
-
-
-
+" Vim Configuration File
 
 "============================================================================
 " Appearance 
 "============================================================================
-    colorscheme ron
-    syntax on
-    set number
-    set background=dark		" enable for dark terminals
-    set nowrap			" don't wrap lines
-    set showmatch		" show matching bracket (briefly jump)
-    set showmode		" show mode in status bar (insert/replace/...)
-    set showcmd			" show typed command in status bar
-    set ruler			" show cursor position in status bar
-    set title			" show file in titlebar
-    set wildmenu		" completion with menu
-    set wildignore=*.o,*.obj,*.bak,*.exe,*.py[co],*.swp,*~,*.pyc,.svn
-    set laststatus=2		" use 2 lines for the status bar
-    set matchtime=2		" show matching bracket for 0.2 seconds
-    set matchpairs+=<:>		" specially for HTML
-
-
+    syntax on                       " load the syntax file for the language
+    set number                      " print the line number in front of each line
+    set background=dark		        " enable for dark terminals
+    set nowrap			            " don't wrap lines
+    set showmatch		            " show matching bracket (briefly jump)
+    set showmode		            " show mode in status bar (insert/replace/...)
+    set showcmd			            " show typed command in status bar
+    set ruler			            " show cursor position in status bar
+    set title			            " show file in titlebar
+    set wildmenu		            " completion with menu
+    set matchtime=2		            " show matching bracket for 0.2 seconds
+    set matchpairs+=<:>		        " specially for HTML
+    set scrolloff=128               " keep the vertical cursor position in the middle
+    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+    match OverLength /\%121v.\+/     " highlight text in red instead of having a vertical column
 
 
 "==============================================================================
-"" editor settings
+" Editor behavior settings
 "==============================================================================
-set esckeys             " map missed escape sequences (enables keypad keys)
-set ignorecase          " case insensitive searching
-set smartcase           " but become case sensitive if you type uppercase characters
-set smartindent         " smart auto indenting
-set smarttab            " smart tab handling for indenting
-set magic               " change the way backslashes are used in search patterns
-set bs=indent,eol,start " Allow backspacing over everything in insert mode
-set tabstop=4           " number of spaces a tab counts for
-set shiftwidth=4        " spaces for autoindents
-set expandtab           " turn a tabs into spaces
+    set esckeys                     " map missed escape sequences (enables keypad keys)
+    set ignorecase                  " case insensitive searching
+    set smartcase                   " but become case sensitive if you type uppercase characters
+    set smartindent                 " do smart autonindenting when starting a new line
+    set autoindent                  " copy indent from current line when starting a new line
+    set smarttab                    " smart tab handling for indenting
+    set magic                       " change the way backslashes are used in search patterns
+    set cindent                     " enables automatic C program indenting
+    set expandtab                   " use the appropriate number of spaces to insert a tab
+    set textwidth=100               " max line of the line after which the text will be broken
+    set tabstop=4                   " number of spaces that a tab in the file counts for
+    set softtabstop=4               " number of spaces a <Tab> counts for
+    set shiftwidth=4                " number of spaces to use for each step of (auto)indent
+    set backspace=indent,eol,start  " Allow backspacing over everything in insert mode
 
+
+"==============================================================================
+" Search
+"==============================================================================
+    set infercase       " keyword completion depends on case
+    set incsearch       " search while typing
 
 
 "============================================================================
-" Swap files are annoying
-" Let's hope vim doesn't crash
+" Swap files are annoying, disable them
 "============================================================================
     set nobackup
     set nowritebackup
     set noswapfile
-
-
-
-"============================================================================
-" set the compatibility with the X system clipboard
-"============================================================================
-    set clipboard=unnamedplus
-
-
-
-"============================================================================
-filetype plugin on 
-filetype plugin indent on
-set softtabstop=4
-
-" turns the highlighting on or off
-set ofu=syntaxcomplete#Complete
-set nowrap
-
-" pop-up menu selects the longest match
-set completeopt=longest,menuone
-set cindent
-set smartindent
-set autoindent
-
-"highlight Pmenu guibg=black
-hi Pmenu ctermbg=green ctermfg=NONE
-hi Pmenu ctermbg=green ctermfg=NONE  guibg=whtie guifg=white
-
-set ai et sw=4 ts=4 tw=110 sts=4
-
-
-
-" Load a template based on the file extension
-autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
-
-" highlight the current line
-"hi CursorLine cterm=NONE ctermbg=yellow  guibg=darkred guifg=darkred
-"hi Cursor guifg=red guibg=red
-" set guicursor=n-v-c:block-Cursor
-set cursorline
-
-" search 
-set infercase       " see :h infercase for an explanation
-
-" 
-set scrolloff=9999
-
-" mappings for buffers
-nnoremap <silent> [b :bprevious<CR>     " previous buffer
-nnoremap <silent> ]b :bnext<CR>         " next buffer 
-nnoremap <silent> [B :bfirst<CR>        " go to the first bufffer 
-nnoremap <silent> [B :blast<CR>         " go to the last bufffer 
-
-" mappings for tabs
-nnoremap <silent> [t :tabprevious<CR>
-nnoremap <silent> ]t :tabnext<CR>
-
-
-
-
-" use the star character in visual mode to searc for the current selection 
-xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
-function! s:VSetSearch()
-    let temp = @s
-    norm! gv"sy
-    let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
-    let @s = temp
-endfunction
-
-" this is for spell checking
-set spelllang=en_us
-
-
-" add empty line above or below the current line 
-map <Enter> o<Esc> 
-map <S-Enter> O<Esc>
-
-
-
-
-
-
-
-" from the oreilly video course about vim 
-"
-
-
-
-
-"============================================================================
-"" Use arrow keys to navigate after a :vimgrep or :helpgrep
-"============================================================================
-    nmap <silent> <RIGHT>         :cnext<CR>
-    nmap <silent> <RIGHT><RIGHT>  :cnfile<CR><C-G>
-    nmap <silent> <LEFT>          :cprev<CR>
-    nmap <silent> <LEFT><LEFT>    :cpfile<CR><C-G>
-
-
-
-"============================================================================
-" Make :help appear in a full-screen tab, instead of a window
-"============================================================================
-    " Only apply to .txt files
-    augroup HelpInTabs
-        autocmd!
-        autocmd BufEnter  *.txt   call HelpInNewTab()
-    augroup END
-
-    "Only apply to help files...
-    function! HelpInNewTab()
-        if &buftype == 'help'
-            "Convert the help window to a tab...
-            execute "normal \<C-W>T"
-        endif
-    endfunction 
-
-
-
-"============================================================================
-" Turn on the ruler in the status line 
-"============================================================================
-    set ruler
-
-
-
-
-"============================================================================
-" Make % match angle brackets as well (including Euro-brackets)
-"============================================================================
-
-    set matchpairs+=<:>,«:»
-
-"============================================================================
-" Make % match = and ; useful for programming languages that use that kind
-" of syntax
-" Note that it appends the wanted characters
-"============================================================================
-    set matchpairs+==:;         
-
-   
-"============================================================================
-" Use the very special mode of searching - works like regular regex
-" in other programming languages 
-"============================================================================
-"    nnoremap / /\v
-"
-
-
-"============================================================================
-" Turn on case-insensitive matches (but only when pattern is all-lowercase)
-" smartcase overrides the behavior of ignorecase 
-"============================================================================
-    set ignorecase smartcase
-
-"============================================================================
-"" Make searches look-ahead as you type
-"============================================================================
-    set incsearch 
-
-"============================================================================
-"" Make successful searches highlight all possible matches
-"============================================================================
-    set hlsearch
-
-"============================================================================
-"" Make delete key in Normal mode remove the persistently highlighted matches
-"============================================================================
-"
-    nnoremap <silent>  <BS>  :nohlsearch<CR>
-    " silent the hlsearch, like clear the screen 
-    nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
-
-
 
 
 "============================================================================
@@ -246,161 +60,7 @@ map <S-Enter> O<Esc>
     if has('persistent_undo')
             set undofile
     endif
-
     set undodir=$HOME/.VIM_UNDO_FILES
-
-    set undolevels=5000
-
-
-"============================================================================
-" Set up a permanent universal vertical marker after 80 columns
-"============================================================================
-"    highlight ColorColumn ctermbg=red
-"    set colorcolumn=121
+    set undolevels=1000
 
 
-
-
-"============================================================================
-" Comment block function and mappings
-"============================================================================
-function CommentBlock(comment, ...)
-    "If 1 or more optional args, first optional arg is introducer...
-    let introducer =  a:0 >= 1  ?  a:1  :  "//"
-
-    "If 2 or more optional args, second optional arg is boxing character...
-    let box_char   =  a:0 >= 2  ?  a:2  :  "*"
-
-    "If 3 or more optional args, third optional arg is comment width...
-    let width      =  a:0 >= 3  ?  a:3  :  strlen(a:comment) + 2
-
-    let comment_length = strlen(a:comment)
-    let left_padding = width / 2 - comment_length
-    left_padding = (left_padding > 4) ? left_padding : 4
-
-
-    echom "comment length: " . strlen(a:comment)
-
-
-    " Build the comment box and put the comment inside it...
-    return introducer . repeat(box_char,width) . "\<CR>"
-    \    . introducer . repeat(" ", left_padding) . a:comment        . "\<CR>"
-    \    . introducer . repeat(box_char,width) . "\<CR>"
-
-endfunction
-
-
-"C++/Java/PHP comment...
-imap <silent>  ///  <C-R>=CommentBlock(input("Enter comment: "))<CR>
-
-"Ada/Applescript/Eiffel comment...
-imap <silent>  ---  <C-R>=CommentBlock(input("Enter comment: "),'--')<CR>
-
-"Perl/Python/Shell comment...
-imap <silent>  ###  <C-R>=CommentBlock(input("Enter comment: "),'#','#', 120)<CR>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"set fileformat=unix     # file mode is unix
-"#set fileformats=unix,dos    # only detect unix file format, displays that ^M with dos files
-"
-"# system settings
-"set lazyredraw          # no redraws in macros
-"set confirm             # get a dialog when :q, :w, or :wq fails
-"
-"set viminfo='20,\"500   # remember copy registers after quitting in the .viminfo file -- 20 jump links, regs up to 500 lines'
-"set hidden              # remember undo after quitting
-"set history=50          # keep 50 lines of command history
-"set mouse=v             # use mouse in visual mode (not normal,insert,command,help mode
-"
-"
-"# color settings (if terminal/gui supports it)
-"if &t_Co > 2 || has("gui_running")
-  "syntax on          # enable colors
-  "set hlsearch       # highlight search (very useful!)
-  "set incsearch      # search incremently (search while typing)
-"endif
-"
-"# paste mode toggle (needed when using autoindent/smartindent)
-"map <F10> :set paste<CR>
-"map <F11> :set nopaste<CR>
-"imap <F10> <C-O>:set paste<CR>
-"imap <F11> <nop>
-"set pastetoggle=<F11>
-"
-"# Use of the filetype plugins, auto completion and indentation support
-"filetype plugin indent on
-"
-"# file type specific settings
-"if has("autocmd")
-  "# For debugging
-  "#set verbose=9
-"
-  "# if bash is sh.
-  "let bash_is_sh=1
-"
-  "# change to directory of current file automatically
-  "autocmd BufEnter * lcd %:p:h
-"
-  "# Put these in an autocmd group, so that we can delete them easily.
-  "augroup mysettings
-    "au FileType xslt,xml,css,html,xhtml,javascript,sh,config,c,cpp,docbook set smartindent shiftwidth=2 softtabstop=2 expandtab
-    "au FileType tex set wrap shiftwidth=2 softtabstop=2 expandtab
-"
-    "# Confirm to PEP8
-    "au FileType python set tabstop=4 softtabstop=4 expandtab shiftwidth=4 cinwords=if,elif,else,for,while,try,except,finally,def,class
-  "augroup END
-"
-  "augroup perl
-    "# reset (disable previous 'augroup perl' settings)
-    "au!  
-"
-    "au BufReadPre,BufNewFile
-    "\ *.pl,*.pm
-    "\ set formatoptions=croq smartindent shiftwidth=2 softtabstop=2 cindent cinkeys='0{,0},!^F,o,O,e' " tags=./tags,tags,~/devel/tags,~/devel/C
-    "# formatoption:
-    "#   t - wrap text using textwidth
-    "#   c - wrap comments using textwidth (and auto insert comment leader)
-    "#   r - auto insert comment leader when pressing <return> in insert mode
-    "#   o - auto insert comment leader when pressing 'o' or 'O'.
-    "#   q - allow formatting of comments with "gq"
-    "#   a - auto formatting for paragraphs
-    "#   n - auto wrap numbered lists
-    "#   
-  "augroup END
-"
-"
-  "# Always jump to the last known cursor position. 
-  "# Don't do it when the position is invalid or when inside
-  "# an event handler (happens when dropping a file on gvim). 
-  "autocmd BufReadPost * 
-    "\ if line("'\"") > 0 && line("'\"") <= line("$") | 
-    "\   exe "normal g`\"" | 
-    "\ endif 
-"
-"endif # has("autocmd")
-"

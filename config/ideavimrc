@@ -1,17 +1,4 @@
 # Updated to capabilities of IdeaVim 0.55
-set gdefault
-set ignorecase 
+# Note: ideavim crashes when using remapping of keys
+source ~/.vimrc
 
-" center the cursor vertically
-    set scrolloff=512
-
-" enable line numbering
-    set number
-
-et ai et sw=4 ts=4 tw=120 sts=4
-
-" Turn on the rule in the status line
-    set ruler
-
-" make searches look-ahead as you type, incremental search
-    set incsearch
