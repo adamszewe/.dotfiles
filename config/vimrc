@@ -16,6 +16,8 @@
     set matchtime=2                 " show matching bracket for 0.2 seconds
     set matchpairs+=<:>             " specially for HTML
     set scrolloff=128               " keep the vertical cursor position in the middle
+    set visualbell                  " terminal flashing on errors
+    set noerrorbells                " turn off audio bells on errors
     highlight OverLength ctermbg=red ctermfg=white guibg=#592929
     match OverLength /\%121v.\+/    " highlight text in red instead of having a vertical column
 
