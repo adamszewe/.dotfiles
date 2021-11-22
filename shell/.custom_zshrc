@@ -1,0 +1,30 @@
+# aliases
+alias gs='git status'
+alias g='git'
+alias gcd='git checkout develop'
+alias gch='git checkout'
+alias grhh='git reset --hard HEAD'
+alias ga='git add'
+alias gaa='git add .'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gh='git log --pretty=oneline'
+alias gpod='git pull origin develop'
+alias gpom='git pull origin master'
+alias gfch="git fetch origin $1 && git checkout $1"
+alias gpf="git push --force"
+
+function grd {
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    git checkout develop
+    git pull origin develop
+    git checkout $current_branch
+    git rebase develop
+}
+
+# generic aliases
+alias ll='ls -l'
+alias ./g="./gradlew"
+alias v="vim"
+alias ip3='ipython3'
+alias wsp="cd ~/Documents/workspace/"
