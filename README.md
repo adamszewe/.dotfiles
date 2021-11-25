@@ -1,20 +1,13 @@
 # .dotfiles
 
 ## Description:
-Some configuration files for mostly CLI programs I use on a daily basis.
+Some configuration files for mostly programs I use on a daily basis.
 
-## Tools:
-* Vim
-* Tmux
-* SSH config template
-
-## Aliases
-* Docker
-* Git
-* Kubernetes
-* Terraform
-
+## Requirements:
+* git
+* GNU stow
 
 ## Install
-
-
+```
+make
+```
