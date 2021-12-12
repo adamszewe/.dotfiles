@@ -33,8 +33,10 @@ alias v="vim"
 alias ip3='ipython3'
 alias wsp="cd ~/Documents/workspace/"
 
+
+if [ -d "$HOME/.local/bin/" ]; then
+    export PATH=$PATH:$HOME/.local/bin/
+fi
+
 # key bindings
-bindkey -s ^f "~/tmux-sessionizer\n"
-
-
-
+bindkey -s ^f "find-in-workspace\n"
