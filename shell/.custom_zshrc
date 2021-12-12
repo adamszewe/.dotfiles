@@ -1,5 +1,5 @@
 # Git configuration
-export GIT_PAGER=less
+export GIT_PAGER="less -F -X"
 export GIT_EDITOR=vim
 
 # Git aliases
