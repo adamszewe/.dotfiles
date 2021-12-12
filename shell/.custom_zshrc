@@ -1,6 +1,10 @@
-# aliases
-alias gs='git status'
+# Git configuration
+export GIT_PAGER=less
+export GIT_EDITOR=vim
+
+# Git aliases
 alias g='git'
+alias gs='git status'
 alias gcd='git checkout develop'
 alias gch='git checkout'
 alias grhh='git reset --hard HEAD'
@@ -28,3 +32,9 @@ alias ./g="./gradlew"
 alias v="vim"
 alias ip3='ipython3'
 alias wsp="cd ~/Documents/workspace/"
+
+# key bindings
+bindkey -s ^f "~/tmux-sessionizer\n"
+
+
+
