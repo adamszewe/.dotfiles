@@ -17,6 +17,7 @@ alias gpod='git pull origin develop'
 alias gpom='git pull origin master'
 alias gfch="git fetch origin $1 && git checkout $1"
 alias gpf="git push --force"
+alias gbd="git branch --list | fzf | xargs git branch --delete --force"
 
 function grd {
     current_branch=$(git rev-parse --abbrev-ref HEAD)
