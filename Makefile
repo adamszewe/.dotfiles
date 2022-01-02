@@ -4,3 +4,4 @@ all:
 	stow tmux
 	stow git
 	stow bin
+	stow alacritty
