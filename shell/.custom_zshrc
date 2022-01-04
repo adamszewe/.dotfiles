@@ -49,7 +49,7 @@ fi
 function find_in_workspace {
     found_item=$(find ~/Documents ~/ ~/Documents/workspace -maxdepth 2 -mindepth 1 -type d 2> /dev/null | fzf)
     if [ -z "$found_item" ]; then
-        exit 0
+        # do nothing, remain silent, be quiet for several days
     else
         echo "opening the directory: $found_item"
         cd "$found_item"
