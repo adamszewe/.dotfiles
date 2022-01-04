@@ -46,5 +46,15 @@ if [ -d "$HOME/.local/bin/" ]; then
     export PATH=$PATH:$HOME/.local/bin/
 fi
 
+function find_in_workspace {
+    found_item=$(find ~/Documents ~/ ~/Documents/workspace -maxdepth 2 -mindepth 1 -type d 2> /dev/null | fzf)
+    if [ -z "$found_item" ]; then
+        exit 0
+    else
+        echo "opening the directory: $found_item"
+        cd "$found_item"
+    fi
+}
+
 # key bindings
-bindkey -s ^f "find-in-workspace\n"
+bindkey -s ^f "find_in_workspace\n"
