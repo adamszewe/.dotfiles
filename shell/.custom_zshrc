@@ -36,7 +36,7 @@ function grd {
 
 # generic aliases
 alias ll='ls -l'
-alias ./g="./gradlew"
+alias gr="./gradlew"
 alias v="vim"
 alias ip3='ipython3'
 alias wsp="cd ~/Documents/workspace/"
