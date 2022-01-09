@@ -22,7 +22,7 @@ function gch {
     if [ -z "$1" ]; then
         git branch --list | fzf | xargs git checkout
     else
-        git checkout "$1"
+        git checkout "$@"
     fi
 }
 
