@@ -9,5 +9,5 @@ Some configuration files for mostly programs I use on a daily basis.
 
 ## Install
 ```
-make
+./install.sh
 ```
