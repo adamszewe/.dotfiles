@@ -2,3 +2,67 @@
 # Note: ideavim crashes when using remapping of keys
 source ~/.vimrc
 
+" Use ctrl-c as an ide shortcut in normal and visual modes
+" sethandler <C-C> n-v:ide i:vim
+" This option consist of an optional shortcut and a list of space separated list of handlers: mode-list:handler mode-list:handler ...
+" The mode-list is a dash separated list of modes that is similar to guicursor notation and defines the following modes:
+" n - normal mode
+" i - insert mode
+" x - visual mode
+" v - visual and select modes
+" a - all modes
+
+
+" sethandler <C-A> " unused - can be select all
+sethandler <C-B> a:ide " ide: go to declaration
+sethandler <C-C> a:ide " ide: copy to clipboard
+" sethandler <C-D>          " unused - useless in both ide and vim (navigation)
+sethandler <C-E> a:ide      " ide: recent files popup
+sethandler <C-F> a:ide          " ide: find
+" sethandler <C-G> " ide: go to line, not used in vim
+" sethandler <C-H> " deletes a character before cursor, but
+
+sethandler <C-I> a:ide   " ide: implement methods
+
+" equivalent of enter, ide: insert live template
+" sethandler <C-J>
+
+" ide: commit project to vcs
+" sethandler <C-K>
+
+" not used
+" sethandler <C-L>
+
+" not used
+" sethandler <C-M>
+
+
+" ide: go to class
+sethandler <C-N> a:ide
+
+" ide: override methods
+sethandler <C-O> a:ide
+
+" shows parameters in ide
+"sethandler <C-P>
+
+" ide: quick documentation lookup
+sethandler <C-Q> a:ide
+
+" ide: replace, vim: redo
+sethandler <C-R> a:vim
+
+sethandler <C-S>                        " ide: save all
+" sethandler <C-T> " ide: update project form vcs, vim: indent
+sethandler <C-U> a:ide                  " ide: go to super class
+sethandler <C-V> i:ide n:vim            " ide: paste, vim: visual block
+sethandler <C-W> a:vim                  " vim: change window
+sethandler <C-X> a:ide                  " ide: cut to clipboard
+
+" ide: delete line at caret
+" sethandler <C-Y>
+
+" not used
+" sethandler <C-Z>
+
+
