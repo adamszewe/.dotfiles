@@ -1,38 +1,3 @@
-# Git configuration
-export GIT_PAGER="less -F -X"
-export GIT_EDITOR=vim
-
-# Git aliases
-alias g='git'
-alias gs='git status'
-alias gcd='git checkout develop'
-alias grhh='git reset --hard HEAD'
-alias ga='git add'
-alias gaa='git add .'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gh='git log --pretty=oneline --max-count=5'
-alias gpod='git pull origin develop'
-alias gpom='git pull origin master'
-alias gfch="git fetch origin $1 && git checkout $1"
-alias gpf="git push --force"
-alias gbd="git branch --list | fzf | xargs git branch --delete --force"
-
-function gch {
-    if [ -z "$1" ]; then
-        git branch --list | fzf | xargs git checkout
-    else
-        git checkout "$@"
-    fi
-}
-
-function grd {
-    current_branch=$(git rev-parse --abbrev-ref HEAD)
-    git checkout develop
-    git pull origin develop
-    git checkout $current_branch
-    git rebase develop
-}
 
 function webp2jpg {
     if [ -z "$1" ]; then
@@ -55,11 +20,6 @@ alias gr="./gradlew"
 alias v="vim"
 alias ip3='ipython3'
 alias wsp="cd ~/Documents/workspace/"
-
-
-if [ -d "$HOME/.local/bin/" ]; then
-    export PATH=$PATH:$HOME/.local/bin/
-fi
 
 function find_in_workspace {
     found_item=$(find ~/Documents ~/ ~/Documents/workspace -maxdepth 2 -mindepth 1 -type d 2> /dev/null | fzf)
