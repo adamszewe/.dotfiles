@@ -15,7 +15,7 @@ alias gca='git commit --amend'
 alias gcd='git checkout develop'
 alias gf='git fetch'
 alias gfch="git fetch origin $1 && git checkout $1"
-alias gl='git log --format=format:"%C(red)%h  %C(green)%as %C(reset) %s" --max-count 5'
+alias gl='git log --format=format:"%C(red)%h  %C(green)%as %C(yellow)%d%Creset %s" --max-count 5'
 alias gp='git push'
 alias gpf="git push --force"
 alias gpod='git pull origin develop'
