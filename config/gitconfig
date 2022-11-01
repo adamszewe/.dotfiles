@@ -1,8 +1,0 @@
-[user]
-	email = email@example.com
-	name = Username
-[color]
-	ui = auto
-[core]
-	editor = vim
-	pager = less -F -X

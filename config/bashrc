@@ -1,4 +1,0 @@
-# setting the default editor
-export EDITOR="vi"
-
-
