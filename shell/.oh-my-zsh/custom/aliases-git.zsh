@@ -15,6 +15,7 @@ alias gcd='git checkout develop'
 alias gf='git fetch'
 alias gfch="git fetch origin $1 && git checkout $1"
 alias gl='git log --pretty=oneline --max-count=5'
+alias gp='git push'
 alias gpf="git push --force"
 alias gpod='git pull origin develop'
 alias gpom='git pull origin master'
