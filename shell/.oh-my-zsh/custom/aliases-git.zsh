@@ -2,6 +2,18 @@
 export GIT_PAGER="less -F -X"
 export GIT_EDITOR=vim
 
+function git_main_branch() {
+  command git rev-parse --git-dir &>/dev/null || return
+  local ref
+  for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk}; do
+    if command git show-ref -q --verify $ref; then
+      echo ${ref:t}
+      return
+    fi
+  done
+  echo master
+}
+
 alias g='git'
 alias ga='git add'
 alias gaa='git add .'
@@ -13,13 +25,14 @@ alias gbs='git bisect'
 alias gc='git commit'
 alias gca='git commit --amend'
 alias gcd='git checkout develop'
+alias gcm='git checkout $(git_main_branch)'
 alias gf='git fetch'
 alias gfch="git fetch origin $1 && git checkout $1"
 alias gl='git log --format=format:"%C(red)%h  %C(green)%as %C(yellow)%d%Creset %s" --max-count 5'
 alias gp='git push'
 alias gpf="git push --force"
 alias gpod='git pull origin develop'
-alias gpom='git pull origin master'
+alias gpom='git pull origin $(git_main_branch)'
 alias grhh='git reset --hard HEAD'
 alias gs='git status'
 
