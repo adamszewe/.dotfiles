@@ -22,7 +22,7 @@ alias gb='git branch'
 alias gd='git diff'
 alias gbd="git branch --list | fzf | xargs git branch --delete --force"
 alias gbs='git bisect'
-alias gc='git commit'
+#alias gc='git commit'
 alias gca='git commit --amend'
 alias gcd='git checkout develop'
 alias gcm='git checkout $(git_main_branch)'
@@ -50,4 +50,21 @@ function grd {
     git pull origin develop
     git checkout $current_branch
     git rebase develop
+}
+
+# alias gc='git commit'
+# todo: another option could be to use global git hooks instead and create one for the commit messages while still
+# using the template
+function gc {
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+    if [[ "$current_branch" =~ ^([a-z]+-[0-9]+)\/.+$ ]]; then
+      message_prefix=$(echo ${BASH_REMATCH[1]} | tr '[:lower:]' '[:upper:]')
+      git commit --message="[$message_prefix ]" --edit
+    elif [[ "$current_branch" =~ "^tech\/.+" ]]; then
+      message="[TECH] "
+      git commit --message=$message --edit
+    else
+      git commit
+    fi
 }
