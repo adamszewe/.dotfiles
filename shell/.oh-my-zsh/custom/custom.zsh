@@ -1,16 +1,20 @@
 
 function webp2jpg {
-    if [ -z "$1" ]; then
-        for webp in ./*.webp
-        do
-            image_name=$(basename $webp .webp)
-            convert "$webp" "$image_name.jpg"
-            rm "$webp"
-        done
+    if ! type -P "convert" &> /dev/null; then
+      echo "Error: `convert` not found on this system."
     else
-        image_name=$(basename $@ .webp)
-        convert "$@" "$image_name.jpg"
-        rm "$@"
+      if [ -z "$1" ]; then
+          for webp in ./*.webp
+          do
+              image_name=$(basename $webp .webp)
+              convert "$webp" "$image_name.jpg"
+              rm "$webp"
+          done
+      else
+          image_name=$(basename $@ .webp)
+          convert "$@" "$image_name.jpg"
+          rm "$@"
+      fi
     fi
 }
 
