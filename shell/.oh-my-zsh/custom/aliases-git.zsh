@@ -51,3 +51,12 @@ function grd {
     git checkout $current_branch
     git rebase develop
 }
+
+function grm {
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    main_branch=$(git_main_branch)
+    git checkout "$main_branch"
+    git pull origin "$main_branch"
+    git checkout "$current_branch"
+    git rebase "$main_branch"
+}
