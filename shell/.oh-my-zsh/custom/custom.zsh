@@ -22,7 +22,7 @@ function webp2jpg {
 alias ll='ls -l'
 alias gr="./gradlew"
 alias v="vim"
-alias ip3='ipython3'
+alias ip3='ipython3 --no-banner --no-confirm-exit'
 alias wsp="cd ~/Documents/workspace/"
 
 function find_in_workspace {
