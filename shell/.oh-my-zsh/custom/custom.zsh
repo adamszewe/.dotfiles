@@ -18,13 +18,6 @@ function webp2jpg {
     fi
 }
 
-# generic aliases
-alias ll='ls -l'
-alias gr="./gradlew"
-alias v="vim"
-alias ip3='ipython3 --no-banner --no-confirm-exit'
-alias wsp="cd ~/Documents/workspace/"
-
 function find_in_workspace {
     found_item=$(find ~/Documents ~/ ~/Documents/workspace -maxdepth 2 -mindepth 1 -type d 2> /dev/null | fzf)
     if [ -z "$found_item" ]; then
@@ -35,30 +28,44 @@ function find_in_workspace {
     fi
     clear
 }
+bindkey -s ^f "find_in_workspace\n"
 
-function open_project_in_ide {
-    found_item=$(find ~/Documents ~/ ~/Documents/workspace -maxdepth 2 -mindepth 1 -type d 2> /dev/null | fzf)
-    if [ -z "$found_item" ]; then
-        # do nothing, remain silent, be quiet for several days
+
+
+# git helper functions
+function git_main_branch() {
+  command git rev-parse --git-dir &>/dev/null || return
+  local ref
+  for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk}; do
+    if command git show-ref -q --verify $ref; then
+      echo ${ref:t}
+      return
+    fi
+  done
+  echo master
+}
+
+function gch {
+    if [ -z "$1" ]; then
+        git branch --list | fzf | xargs git checkout
     else
-        JETBRAINS_SCRIPTS_DIR="$HOME/.jetbrains-toolbox-ide-scripts"
-        if [ -d "$JETBRAINS_SCRIPTS_DIR" ]; then
-            script_names=($(ls -1 "$JETBRAINS_SCRIPTS_DIR"))
-            for script_name in ${script_names[@]} ; do
-              if [[ "$found_item" =~ "$script_name/" ]]; then
-                echo "opening with: $script_name, project: $found_item"
-                $script_name "$found_item"
-                break
-              fi
-            done
-            # todo: in case a script is not found to matched right away to open the project, then ask for which ide should be used for opening it
-        else
-            echo "jetbrains scripts directory does not exist, exiting without opening a project"
-        fi
-
+        git checkout "$@"
     fi
 }
 
-# key bindings
-bindkey -s ^f "find_in_workspace\n"
-bindkey -s ^o "open_project_in_ide\n"
+function grd {
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    git checkout develop
+    git pull origin develop
+    git checkout $current_branch
+    git rebase develop
+}
+
+function grm {
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    main_branch=$(git_main_branch)
+    git checkout "$main_branch"
+    git pull origin "$main_branch"
+    git checkout "$current_branch"
+    git rebase "$main_branch"
+}

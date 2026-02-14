@@ -1,1 +1,2 @@
-stow vim shell
+stow vim
+stow shell
