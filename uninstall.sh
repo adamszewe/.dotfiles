@@ -1,1 +1,2 @@
-stow --delete vim shell
+stow --delete vim
+stow --delete shell
